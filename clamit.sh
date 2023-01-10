@@ -12,7 +12,7 @@ echo "Running virus scan..."
 function clamremove {
   clamscan -r -i --remove=yes /
 }
-function askYesNo {
+function yesorno {
         QUESTION=$1
         DEFAULT=$2
         if [ "$DEFAULT" = true ]; then
@@ -32,7 +32,7 @@ function askYesNo {
         fi
 }
 
-askYesNo "Do you want to delete the results from the scan?" true
+yesorno "Do you want to delete the results from the scan?" true
 DOIT=$ANSWER
 
 if [ "$DOIT" = true ]; then clamremove
